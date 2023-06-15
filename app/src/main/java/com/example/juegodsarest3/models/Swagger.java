@@ -33,6 +33,9 @@ public interface Swagger {
     @POST("game/compraObjetos/{correo}/{nombreObjeto}")
     Call<TablaCompra> hacerCompra(@Path("correo") String correo, @Path("nombreObjeto") String nombreObjeto);
 
+    /*@POST("game//{correo}/{nombreObjeto}")
+    Call<TablaInsignia> (@Path("correo") String correo, @Path("nombreObjeto") String nombreObjeto);*/
+
     @POST("game/añadirDenuncia")
     Call<Denuncia> añadirDenuncia(@Body Denuncia d);
 
@@ -53,4 +56,7 @@ public interface Swagger {
 
     @GET("game/listaObjetosUsuario/{correo}")
     Call<List<TablaCompra>> getlistaObjetosUsuario(@Path("correo") String correo);
+
+    @GET("game/listaInsigniasUsuario/{correo}")
+    Call<List<Insignia>> getlistaInsigniaUsuario();
 }
